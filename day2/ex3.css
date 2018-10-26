@@ -1,0 +1,74 @@
+@charset 'utf-8';
+
+/* css 작업할 때에는 조상, 자손순으로 작업하는것이 좋다
+    */
+
+*{
+       box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       -webkit-box-sizing: border-box;
+     
+       margin: 0;
+       padding: 0;
+       font-size: 14px;
+
+}
+
+
+
+/* 
+ 1.이렇게 쓸 수 도 있다.
+   body{
+   margin: 0px;
+} */
+
+#box1>*{ font-size: 20px;
+
+}
+
+#box1{
+height: 150px;
+background-color: springgreen;
+font-size: 0px;
+
+
+}
+
+
+
+
+
+
+#box_left,
+#box_center,
+#box_right{
+
+    border: solid 1px black;
+    height: 100px;
+    /* calc 함수는 연산자를 공백으로 구분한기 때문에 값과 연산자 사이에는 항상 공백을 입력해야한다.
+       단 단위를 수치랑 붙여 써야한다. */
+    width: calc(100% / 3);
+    display: inline-block;
+}
+
+#box2{
+
+    background-color: teal;
+    height: 150; 
+}
+
+#box_left1,
+#box_right1{
+
+    border: solid 1px black;
+    height: 100px;
+    /* calc 함수는 연산자를 공백으로 구분한기 때문에 값과 연산자 사이에는 항상 공백을 입력해야한다.
+       단 단위를 수치랑 붙여 써야한다. */
+    width: 50%;
+    display: inline-block;
+}
+
+#box_right1{
+
+    float: right;
+}

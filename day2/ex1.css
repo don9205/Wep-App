@@ -1,0 +1,54 @@
+@charset 'utf-8';
+
+div{
+     text-decoration: overline;
+     text-align: center;
+     text-indent: 0px;
+     
+     font-weight: bold;
+     font-style: italic;
+     font-size: 100px;
+     font-family: monospace;
+     
+     font: 700 italic 100px monospace;
+     
+
+     /* margin은 태그를 하나의 박스로 생각한다면 박스 밖의 여백 */
+     margin-top: 10px;
+     margin-right: 80px;
+     margin-bottom: 40px;
+     margin-left: 20px;
+
+     /* 위를 기준으로 시계 방향, 위(top) 오른쪽(right) 아래(bottom) 왼쪽(left) */
+     margin: 10px 80px 40px 20px;
+     /* 위, 아래 와 오른쪽, 왼쪽 동일할 때 2개*/
+     margin: 10px 20px;
+     /* 전부 동일할 때 1개 */
+     margin: 10px;
+     /* 3개가 동일할 때 */
+     margin: 10px 20px 30px;
+     /* 모든 속성은 마지막에 있는 속성값으로 덮어쓰기한다.  */
+     
+     border-top-style: solid;
+     border-top-width: 20px;
+     border-top-color: aqua;
+     border-style: solid;
+     border-width: 10px;
+     border-color: #a6a2f2;
+     border-bottom-color: darkorange;
+     border-top: solid 10px blue;
+     border-radius: 20px;
+     
+     
+     padding: 100px;
+     
+
+
+}
+
+text-color{
+    color: aqua;
+    border-left: solid 10px blueviolet;
+    border-right: solid 10px blueviolet;
+    border: solid 10px red;
+}

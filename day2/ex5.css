@@ -1,0 +1,26 @@
+@charset 'utf-8';
+
+
+div{
+    border: solid 1px black;
+}
+
+
+.box1{
+
+    padding: 10px;
+}
+
+.box1-inner{
+
+height: 100px;
+border-color: red;
+
+}
+
+.box2-inner{
+
+    height: 100px;
+    border-color: green;
+    margin: 10px;
+}
