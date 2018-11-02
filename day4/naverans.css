@@ -490,12 +490,191 @@ li>span {
 .box2{
 
     height: 46px;
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 8px;
+    border: 1px solid #dee3eb;
 }
+
+.box2-inner {
+
+    position: relative;
+    padding: 15px 0 0 16px ;
+
+}
+
+.box2-inner>h3 {
+
+    float: left;
+}
+
+.box2-inner-link {
+
+    display: block;
+    margin-right: 12px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: NanumSquare,Dotum,"돋움",Helvetica,AppleSDGothicNeo,sans-serif;
+    line-height: 16px;
+}
+
+.box2-inner-link>span {
+
+    display: inline-block;
+    margin-left: 8px;
+    width: 5px;
+    height: 9px;
+    background-image: url('https://s.pstatic.net/static/www/img/2018/sp_newscast_v180511.png');
+    background-position: -256px -100px;
+    
+}
+
+.box2-inner2 {
+
+    float: left;
+    margin-top: -2px;
+    width: 340px;
+    height: 20px;
+    text-align: left;
+}
+
+.box2-inner2:hover {
+
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.box2-inner3 {
+
+    position: absolute;
+    top: 50%;
+    right: 2px;
+    margin-top: 7px;
+    font-size: 12px;
+    font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
+    font-weight: 700;
+}
+
+.box2-inner3>a>li {
+
+    float: left;
+    margin-right: 14px;
+    
+}
+
+.box2-inner3-1 {
+    color: #00ab33;
+    
+}
+
+.box2-inner3-2,
+.box2-inner3-3,
+.box2-inner3-4 {
+    color: #666;
+}
+
+.box2-inner3-2:hover,
+.box2-inner3-3:hover,
+.box2-inner3-4:hover {
+    color: #000;
+}
+
+
 
 .box3{
 
     height: 246px;
+    background-color: white;
 }
+
+
+.box3-inner {
+    position: relative;
+    height: 44px;
+    border-bottom: 1px solid #ebeef3;
+}
+
+.news-stand {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 13px 0 0 16px;
+}
+
+.news-stand>a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: NanumSquare,Dotum,"돋움",Helvetica,AppleSDGothicNeo,sans-serif;
+    line-height: 20px;
+}
+
+.news-stand>a>span {
+
+    background-image: url('https://s.pstatic.net/static/www/img/2018/sp_newscast_v180511.png');
+    display: inline-block;
+    margin-left: 8px;
+    width: 5px;
+    height: 9px;
+    background-position: -256px -100px;
+}
+
+
+.box3-inner-item1 {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    padding: 13px 0;
+    height: 18px;
+}
+
+.box3-inner-item1-1 {
+    text-align: left;
+  
+}
+
+.box3-inner-item1-1::after {
+    clear: both;
+    content: "";
+}
+
+.box3-inner-item1-1>a {
+
+    color: #000;
+    text-decoration: none;
+}
+
+.box3-inner-item1-1>span {
+
+    display: block;
+    margin: 2px 15px 0;
+    width: 1px;
+    height: 15px;
+    background-color: #ebeef3;
+}
+
+.mynews {
+        display: block;
+        color: #666;
+        text-decoration: none;
+        font-weight: 700;
+        line-height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .bottom-right>div{
 
