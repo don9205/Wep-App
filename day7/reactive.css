@@ -1,0 +1,64 @@
+@charset 'utf-8';
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+}
+
+.container-fluid{
+	width: 100%;
+
+}
+
+.container
+ {
+	margin: 0 auto;
+	border: 1px solid seagreen;
+}
+
+
+
+@media (max-width:575px) {
+	.container,
+	.btn {
+	 width: 100%;
+
+	 }
+ 
+ }
+
+
+
+@media (min-width:576px) and (max-width:767px) {
+ .container,
+ .btn {
+	width: 540px;
+  }
+
+}
+
+@media (min-width:768px) and (max-width:991px) {
+	.container,
+	.btn {
+	width: 720px;
+	}
+ 
+ }
+
+@media (min-width:992px) and (max-width:1199px) {
+	.container,
+	.btn {
+  width: 960px;
+  }
+ 
+}
+
+@media (min-width:1200px) {
+	.container,
+	.btn {
+  width: 1140px;
+	}
+ 
+ }
