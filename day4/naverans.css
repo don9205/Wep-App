@@ -453,6 +453,7 @@ li>span {
 
 .bottom-wrap{
     font-size: 0;
+    display: inline-block;
 }
 
 /* bottom-left클래스와 bottom-right 클래스에 같이 적용될 css */
@@ -592,81 +593,123 @@ li>span {
 
 .box3-inner {
     position: relative;
-    height: 44px;
+    height: 45px;
     border-bottom: 1px solid #ebeef3;
 }
 
-.news-stand {
-
+.box3-item1{
+    padding: 13px 0 0 16px;
     position: absolute;
     top: 0;
     left: 0;
-    padding: 13px 0 0 16px;
+    font-size: 0;
 }
-
-.news-stand>a {
-    display: block;
-    color: #000;
-    text-decoration: none;
-    font-weight: 700;
-    font-family: NanumSquare,Dotum,"돋움",Helvetica,AppleSDGothicNeo,sans-serif;
+.box3-item1>a{
+    font-size: 14px;
     line-height: 20px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: -1px;
 }
-
-.news-stand>a>span {
-
-    background-image: url('https://s.pstatic.net/static/www/img/2018/sp_newscast_v180511.png');
-    display: inline-block;
-    margin-left: 8px;
-    width: 5px;
-    height: 9px;
-    background-position: -256px -100px;
-}
-
-
-.box3-inner-item1 {
+.box3-item2{
     position: absolute;
-    top: 0;
-    left: 120px;
     padding: 13px 0;
-    height: 18px;
+    top: 0;
+    left: 102px;
+    height: 44px;
+    line-height: 20px;
+    letter-spacing: -1px;
 }
-
-.box3-inner-item1-1 {
-    text-align: left;
-  
-}
-
-.box3-inner-item1-1::after {
+.box3-menu::after,
+.box3-item3::after,
+.box3-item2::after{
     clear: both;
     content: "";
-}
-
-.box3-inner-item1-1>a {
-
-    color: #000;
-    text-decoration: none;
-}
-
-.box3-inner-item1-1>span {
-
     display: block;
+}
+.my,
+.all{
+    display: inline-block;
+    font-weight: bold;
+    float: left;
+    cursor: pointer;
+}
+.my{
+    color: #666;
+}
+.box3-item2>.item3{
     margin: 2px 15px 0;
-    width: 1px;
-    height: 15px;
-    background-color: #ebeef3;
+    float: left;
+}
+.box3-item3{
+    height: 44px;
+    width: 216px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.box3-menu{
+    width: 126px;
+    height: 44px;
+    display: inline-block;
+    float: left;
+}
+.box3-dir{
+    width: 90px;
+    height: 44px;
+    float: right;
+    
+}
+.box3-prev,
+.box3-next{
+    width: 44px;
+    height: 44px;
+    padding: 16px 0;
+    background-image: url('https://s.pstatic.net/static/www/img/2018/sp_newscast_v180511.png'); 
+    
+    
+    
 }
 
-.mynews {
-        display: block;
-        color: #666;
-        text-decoration: none;
-        font-weight: 700;
-        line-height: 20px;
+.box3-menus{
+    width: 32px;
+    height: 44px;
+    margin-right: 10px;
+    float: left;
+}
+.box3-icons{
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-top: 13px;
+    background-image: url('https://s.pstatic.net/static/www/img/2018/sp_newscast_v180511.png');
+}
+.box3-icons.menu{
+    background-position: -228px -124px;
+}
+.box3-icons.list{
+    background-position: 0 -193px;
+}
+.box3-icons.setting{
+    background-position: -28px -193px;
 }
 
+.btn-prev {
+    width: 8px;
+    height: 16px;
+    
+    background-position: -254px -24px;
+}
 
+.btn.next {
 
+    width: 8px;
+    height: 16px;
+    
+    background-position: -102px -193px;
+
+}
 
 
 
