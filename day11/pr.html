@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+
+
+
+		학년
+	<select id="grade" onchange="getClass()">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+	</select>
+
+	반
+	<select id="class"></select>
+	<button onclick="getClass()">클릭</button>
+	
+	<script>
+
+		function getClass() {
+			var classSelect = document.getElementById('class');
+			var gradeNum = document.getElementById('grade').value; 
+			
+			// 반 셀렉트박스에 내용을 지우는 함수 
+			clearSelect(classSelect);
+			/* 반 셀렉트박스에 내용을 추가하는 함수
+			 * classSelect : 반 select태그 객체
+			 * gradeNum : 학년 
+			 */
+			setSelect(classSelect, gradeNum);
+
+		}
+		function setSelect(classSelect, gradeNum) {
+			var arr = [3,4,5];	 
+			for(var i=1; i<=arr[gradeNum-1]; i++) {
+				  // <option></option>
+					var option = document.createElement('option');
+					// <option value=i></option>
+					option.value = i;
+					var text = document.createTextNode(i);
+					// <option value=i>i</option>
+					option.appendChild(text);
+					// <select> ... <option value=i>i</option></select>
+					classSelect.appendChild(option);
+					list.push(option);
+			}
+		}
+		function clearSelect(classSelect) {
+       for(var i=0; i<list.length; i++) {
+				 classSelect.removeChild(list[i]);
+			 }
+			 list = new Array();
+		}
+
+    // 반 셀렉트 박스에 추가한 option태그 정보들을 저장하기 위한 배열
+		var list = new Array();
+
+	
+
+	 </script>
+
+</body>
+</html>

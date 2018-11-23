@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 입력받은 값 창 띄우기 예제 -->
+	<input type="text" id="inputId">
+	<button onclick="alertMessage()">클릭</button>
+
+	 <br>
+	 <!-- 비밀번호 확인 예제 -->
+	 <input type="password" id="pw1">
+	 <input type="password" id="pw2">
+	 <button onclick="pweq()">확인</button>
+
+	 <br>
+	 <!-- -->
+	 <button onclick="showDetail()">상세보기</button>
+	 <div id="detail"></div>
+
+
+
+	<script>
+	 
+	function alertMessage() {
+		  // 입력창에 있는 텍스트를 가져옴
+	    var input = document.getElementById('inputId').value;
+	    alert(input);
+
+	}
+
+
+	function pweq() {
+
+		var pw_1 = document.getElementById('pw1').value;
+		var pw_2 = document.getElementById('pw2').value;
+
+    if(pw_1=="") {
+			alert("비밀번호를 입력하세요")
+			return;
+		}
+
+		if(pw_1==pw_2) {
+			alert("같습니다");
+		}
+		else {
+			alert("다릅니다");
+		}
+	}
+
+	/**
+	 * ==은 자료형은 상관없이 값이 일치할 때 != 부정형	
+	 *  
+	 * ===은 자료형도 일치하고 값도 일치할 때 !== 부정형
+	 * 
+	 */
+
+  
+
+	function showDetail() {
+		var detailNode = document.getElementById('detail');
+		var subDetail = document.createElement('span');
+		var text = document.createTextNode('상세 내용은 ~입니다');
+		subDetail.appendChild(text);
+		clear()
+		detailNode.appendChild(subDetail);
+
+	}
+
+	function clear() {
+		var detailNode = document.getElementById('detail');
+		var subDetail = document.querySelector('#detail span');
+		if(subDetail != null)
+		detailNode.removeChild(subDetail);
+	}
+
+	</script>
+	
+</body>
+</html>
