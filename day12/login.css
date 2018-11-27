@@ -1,0 +1,42 @@
+@charset 'utf-8';
+
+
+*{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	font-size: 14px;
+	margin: 0;
+	padding:0;
+	margin-left: 60px;
+
+}
+
+.member {
+	background-color: antiquewhite;
+	height: 300px;
+	width: 410px;
+}
+
+.member-1 {
+	margin-left: 120px;
+}
+
+div{
+ width: 0 auto;
+ height: 30px;
+}
+
+.in {
+
+	margin-left: 120px;
+}
+
+.date {
+
+	margin-left: 0;
+}
+
+.gen {
+	margin-left: 20px;
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="login.css">
+	<title>Document</title>
+</head>
+
+<body>
+
+
+
+	<div class="member">
+		<h1 class="member-1">회 원 정 보 입 력</h1>
+		<div>
+			<input id="id" type="text" placeholder="알파벳 시작, 4~15자">
+		</div>
+		<button onclick="checkid()">아이디확인</button>
+		<div>
+			<input id="pw" type="password" placeholder="비 밀 번 호 4~10자">
+		</div>
+		<div>
+			<input id="repw" type="password" placeholder="비 밀 번 호 재 확 인 4~10자">
+		</div>
+		<button onclick="checkpw()">비밀번호확인</button>
+		<div>
+			<input id="name" type="text" placeholder="이 름">
+		</div>
+		<button onclick="checkname()">이름확인</button>
+		<div>
+			<label>생년</label>
+			<input type="date" class="date">
+		</div>
+		<div>
+			<label>성 별</label>
+			<input type="radio" name="gender" value="남성" class="gen">남성
+			<input type="radio" name="gender" value="여성" class="gen">여성
+		</div>
+		<div>
+			<input id="email" type="email" placeholder="알파벳 시작, 이메일">
+		</div>
+		<button onclick="checkemail()">이메일확인</button>
+
+		<input type="button" value="가 입" class="in" onclick="member()">
+		<input type="button" value="가 입 취 소" class="in-">
+
+	</div>
+
+
+
+<script>
+
+	function member() {
+
+	    	checkid();
+			  checkpw();
+			checkname();
+		 checkemail();
+	}
+
+	function checkid() {
+
+		var cid = document.getElementById('id').value;
+			var regex = /^[A-z][A-z0-9]{3,14}$/
+
+			if (cid.length < 4 || 15 < cid.length) {
+
+				alert('처음은 알파벳, 4자이상 15자이하로 작성해주세요')
+				return;
+			}
+
+			if (regex.test(cid)) {
+
+				alert('통과');
+				return true;
+			}
+
+			else {
+				alert('처음은 알파벳, 재확인')
+				return false;
+			}
+
+
+		}
+
+		function checkpw() {
+
+			var cpw = document.getElementById('pw').value;
+			var crepw = document.getElementById('repw').value;
+			var regex = /^[A-z0-9]{4,10}$/
+
+			if (cpw != crepw) {
+				alert('비밀번호와 비밀번호재확인이 일치하는지 확인')
+				return;
+			}
+
+			else {
+
+				if (regex.test(cpw)) {
+
+					alert('통과');
+					return true;
+
+				}
+
+				else {
+
+					alert('4~10자, 재확인');
+					return false;
+
+				}
+
+
+			}
+		}
+
+		function checkname() {
+
+			var cname = document.getElementById('name').value;
+			var regex = /^[가-힣]{0,10}$/
+			if (regex.test(cname)) {
+
+				alert('통과');
+				return true;
+			}
+
+			else {
+				alert('다시 확인');
+				return false;
+
+			}
+		}
+
+		function checkemail() {
+
+			var cemail = document.getElementById('email').value;
+			var regex = /^[A-z][A-z0-9]*@[A-z]*.com$/
+
+			if (regex.test(cemail)) {
+
+				alert('통과');
+				return true;
+			}
+
+			else {
+				alert('다시 확인');
+				return false;
+			}
+
+
+
+		}
+
+
+	</script>
+
+</body>
+
+</html>

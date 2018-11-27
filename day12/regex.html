@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="regex.css">
+</head>
+
+<body>
+
+
+	<input type="text" id="password">
+	<button onclick="regex2()">클릭</button>
+	<br>
+	<div id="box">
+		<!-- <span>비밀번호는 8자이상 20자이하여야 합니다</span> -->
+	</div>
+
+	<div id="length">비밀번호는 8자이상 20자이하이어야 합니다</div>
+	<div id="regex">정규표현식에 맞지 않습니다</div>
+
+
+	<script>
+		clearbox();
+		function clearbox() {
+			document.getElementById('length').style.display = 'none';
+			document.getElementById('regex').style.display = 'none';
+		}
+		function showbox(id) {
+			document.getElementById(id).style.display = 'block';
+
+		}
+		// 함수를 생성 후 아래 코드를 넣어주고, 수정
+
+		function CreateErrorMessage(message) {
+			var span = document.createElement('span');
+			// 텍스트 노트를 만들어서 해당 텍스트에 message를 입력
+			var spanText = document.createTextNode(message);
+			// span 태그에 테스트 노드를 붙인다
+			span.appendChild(spanText);
+			// id가 box인 요소의 객체정보를 가져오고
+			var error = document.getElementById('box');
+			// 해당 객체에 span태그를 붙인다.
+			eroor.appendChild(span);
+		}
+
+		function ClearErrorMessage() {
+			// id 가 box인 요소의 객체정보1을 가져오고
+			var error = document.getElementById('box');
+			// id 가 box인 요소안에 있는 span의 객체정보2를 가져온 후
+			var span = document.querySelector('#box>span');
+			// 객체정보1에서 객체정보2를 제거한다.
+			if (span != null)
+				error.removeChild(span);
+
+		}
+
+		var box = document.getElementById('box');
+		var crebox = document.createElement('div');
+		var spabox = document.createElement('span');
+		var errtext = document.createTextNode('8자이상 20자이하 알맞게 입력해주세요');
+		var errtext1 = document.createTextNode('정규표현식에 맞지않음');
+
+		function createErrorMessage() {
+
+
+			spabox.appendChild(errtext);
+			crebox.appendChild(spabox);
+			box.appendChild(crebox);
+
+			console.log(errtext);
+
+
+
+			//span 태그를 생성
+			// 텍스트 노드를 만들어서 해당 텍스트에 message를 입력
+			//span 태그에 텍스트 노드를 붙인다
+			// id 가 box인 요소의 객체 정보를 가져오고 
+			// 해당 객체에 span태그를 붙인다
+		}
+
+
+		function clearErrorMessage() {
+
+			box.removeChild(crebox);
+			spabox.appendChild(errtext1);
+			crebox.appendChild(spabox);
+			box.appendChild(crebox);
+
+
+
+
+			//id가 box인 요소에 객체정보1을 가져오고
+			//id가 box인 요소안에 있는 span의 객체정보2를 가져온후
+			//객체정보1에서 객체정보2를 제거한다
+		}
+
+		function regex() {
+			var text = document.getElementById('password').value;
+			var regex = /^[A-z0-9]*([A-z]\d|\d[A-z])[A-z0-9]*$/;
+
+
+
+
+			if (text.length < 8 || 20 < text.length) {
+
+				// alert('알맞게 써주세요');
+				createErrorMessage();
+
+				return;
+			}
+
+			if (regex.test(text)) {
+
+				// alert('정규표현식에 맞음');
+				// console.log('정규표현식에 맞음');
+				return true;
+			}
+			else {
+				// alert('정규표현식에 맞지않음');
+
+				clearErrorMessage();
+				// console.log('정규표현식에 맞지않음');
+				return false;
+			}
+
+		}
+
+
+		function regex2() {
+			var text = document.getElementById('password').value;
+			var regex = /^[A-z0-9]*([A-z]\d|\d[A-z])[A-z0-9]*$/;
+
+			clearbox();
+
+
+			if (text.length < 8 || 20 < text.length) {
+
+				// alert('알맞게 써주세요');
+				showbox('length');
+
+				return;
+			}
+
+			if (regex.test(text)) {
+
+				// alert('정규표현식에 맞음');
+				// console.log('정규표현식에 맞음');
+				return true;
+			}
+			else {
+				// alert('정규표현식에 맞지않음');
+
+				showbox('regex');
+				// console.log('정규표현식에 맞지않음');
+				return false;
+			}
+
+		}
+	</script>
+
+</body>
+
+</html>
