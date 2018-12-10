@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<title>Document</title>
+</head>
+
+<body>
+	<input type="text" id="input1">
+	<button>테스트</button>
+	<script>
+		/* $(document).ready(function () {메소드}); 메소드 안에 코드를 구현하면 해당 스크립트가
+			 어디에 위치하든 동일하게 동작을 한다. 하지만 $(document).ready(function () {메소드}); 메소드
+			 밖에 선언을 하면 스크립트 위치에 따라 동작하지 않을수도 있다.
+			 그래서 가급적이면 $(document).ready(function () {메소드}); 메소드 안에 기능들을 구현하는것이 좋다 */
+		$(document).ready(function () {
+
+			function test() {
+				alert('123');
+
+			}
+			$('button').click(test);
+			// text창이 선택되면
+			$('#input1').focus(function () {
+
+				$(this).css('background-color', 'yellow');
+			});
+			// text창이 해제되면
+			$('#input1').blur(function () {
+
+				$(this).css('background-color', 'white');
+			});
+
+			// text창에 마우스를 갖다대면
+			$('#input1').mouseenter(function () {
+
+				$(this).css('background-color', 'blue');
+			});
+			// text창에 마우스가 벗어나면
+			$('#input1').mouseleave(function () {
+
+				$(this).css('background-color', 'red');
+			});
+
+
+
+		});
+
+	</script>
+
+</body>
+
+</html>
