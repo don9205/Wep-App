@@ -4,13 +4,20 @@ $(document).ready(function(){
 		$('.auto-down').toggleClass('auto-up');
 	});
 	$('.item4').click(function(){
+		// 접기 또는 더보기 버튼을 클릭하면 메뉴에 있는 배열을 임시 배열에 저장한다.
+		selectedMenu = menuArr2.slice();
+		displayMenu();
 		menu();
+		checkMenu();
+		closeSubMenu();
+		initCheck();
+
 	});
-	$('.menu-close').click(function(){
-		menu();
-		// $('.sub-menu').removeClass('display-block');
-		// $('.sub-menu-background').removeClass('display-block');
-	});
+	// $('.menu-close').click(function(){
+	// 	menu();
+	// 	// $('.sub-menu').removeClass('display-block');
+	// 	// $('.sub-menu-background').removeClass('display-block');
+	// });
 	function menu(){
 		$('.item4').toggleClass('item4-1');
 		$('.sub-menu').toggleClass('display-block');
@@ -19,17 +26,17 @@ $(document).ready(function(){
 	//div는 ul태그를 감싸는 객체의 선택자명
 	//h는 marginTop의 높이
 	//time은 이동하는데 걸리는 시간
-	var ticker = function(div,h,time)
+	var ticker = function(div,h,time) // 매개변수를 주지않으면 각각 만들어야하기때문에
 	{
 		timer = setTimeout(function(){
-			$(div+' li:first').animate( {marginTop: h}, time, function()
+			$(div+' li:first').animate( {marginTop: h}, time, function() // 여기서 div는 선택자 
 				{
 					//여기서 this는 item5클래스 안에 있는 ul태그 안에 있는 첫번째 
 					//li태그 객체
 					//datach는 해당 객체를 제거한 후 해당 객체를 리턴한다.
 					$(this).detach().appendTo(div+'>ul').removeAttr('style');
 				});
-			ticker(div,h,time);
+			ticker(div,h,time); // 재귀함수로 다시 불러옴
 		}, 2000);         
 	};
 	ticker('.item5','-20px',400);
@@ -87,26 +94,192 @@ $(document).ready(function(){
 	$('.rank-lists').first().css('display','block');
 	$('.rank-lists').last().css('display','none');
 
-	var selectedMenuCnt = 0;
 	var menuArr = ["dici", "newsi", "stocki", "dealeri", "mapi", 
 		"moviei", "musici", "booki", "webtooni"];
 	$('.menu-setting').click(function(){
+		createCheck();
+		/* 메뉴 설정 클릭 시 5개의 빈 박스를 보이기 위한 cnt */
 		var cnt = 0;
 		$('.item2-1').each(function(){
-			$(this).prop('class','item2-1');
-			cnt++;
-			if(cnt > 5){
-				$(this).addClass('display-none');
+			/* 기본 코드에 item2-1과 back-lmg와 각 아이콘 클래스가 있는데
+			back-img와 아이콘 클래스를 제거하기 위해 prop함수로 class를 덮어쓰기한다   */
+			if(menuArr2.length <= cnt){
+				$(this).prop('class','item2-1');
+				if(cnt > 4){
+					$(this).addClass('display-none');
+				}
 			}
+      cnt++;
 		});
+		$('.sub-menu-div input[type=checkbox]').each(function(){
+			$(this).removeClass('display-none');
+		});
+	 $('.all-service').addClass('display-none');
+	 $(this).addClass('display-none');
+	 $('.ok').removeClass('display-none');
+	 $('.init').removeClass('display-none');
+	 $('.cancel').removeClass('display-none');
 	});
+
+	// 메뉴에 있는 X버튼을 클릭했을 때
 	$('.menu-close').click(function(){
-		var i =0;
-		if(selectedMenuCnt == 0){
+		menu();
+		closeSubMenu();
+		selectedMenu = [];
+		checkMenu();
+		initCheck();
+	});
+
+	// 메뉴설정-취소버튼을 클릭했을 때
+	$('.cancel').click(function(){
+		initCheck();
+		checkMenu();
+		selectedMenu = menuArr2.slice();
+		$('.all-service').removeClass('display-none');
+		$('.menu-setting').removeClass('display-none');
+		$('.ok').addClass('display-none');
+		$('.init').addClass('display-none');
+		$('.cancel').addClass('display-none');
+		var i = 0;
+		// 설정된 배열의 길이가 0일때
+		if(menuArr2.length == 0){
 			$('.item2-1').each(function(){
 				$(this).prop('class','item2-1 back-img');
 				$(this).addClass(menuArr[i++]);
 			});
+		// 배열의 길이가 0보다 클 때
+		}else{
+			$('.item2-1').each(function(){
+			 if(menuArr2.length > i){	
+				$(this).prop('class','item2-1 back-img');
+				$(this).addClass(menuArr2[i++]);
+			 }else{
+				$(this).prop('class','item2-1 display-none');
+			 }
+			});
 		}
+		$('.sub-menu-div input[type=checkbox]').each(function(){
+			$(this).addClass('display-none');
+		});
 	});
+  /* 메뉴 설정에서 선택한 메뉴들을 저장하는 배열 */
+	var selectedMenu = [];
+	/* 실제 네이버에서 뿌려줄 메뉴 */
+	var menuArr2 = [];
+	$('.sub-menu-div input[type="checkbox"]').click(function() {
+
+
+		// 클릭한 체크박스의 value를 가져옴
+		var check = $(this);
+		// 배열에 해당 체크박스의 value가 있는지를 확인합니다.
+		var isContain = selectedMenu.indexOf(check.val());
+		var maxSize = 5;
+		// 체크 박스의 value가 배열에 없고 배열의 길이가 2이면
+		// 해당 체크박스의 체크를 비활성화
+		if(isContain<0 && selectedMenu.length == maxSize){
+			check.prop('checked','');
+		}
+		// 길이가 2가 아니면 해당 배열에 추가를 하고 해당 체그박스를 체크를 활성화 
+		else if(isContain<0 && selectedMenu.length != maxSize){
+			selectedMenu.push(check.val());
+			check.prop('checked','checked');
+		}
+		// 체크박스의 value가 배열에 있으면 배열에서 해당 문자열을 제거
+		else{
+			selectedMenu.splice(isContain,1);
+		}
+		var cnt = 0;
+		$('.item2-1').each(function(){
+      if(cnt < selectedMenu.length){
+				$(this).prop('class','item2-1 back-img');
+				$(this).addClass(selectedMenu[cnt++]);
+			}
+			else{
+				$(this).prop('class','item2-1');
+				if(cnt > 4)
+				 $(this).addClass('display-none');
+				 cnt++;
+			}
+		})
+	});
+	// 메뉴설정-확인 버튼을 클릭했을 때
+	$('.ok').click(function(){
+		menuArr2 = selectedMenu.slice();
+		menu();
+		closeSubMenu();
+		initCheck();
+	});
+	// 메뉴설정-초기화 버튼을 클릭했을 때
+	$('.init').click(function(){
+		menuArr2 = [];
+		selectedMenu = [];
+		closeSubMenu();
+		menu();
+		alert('초기 설정으로 돌아갑니다.')
+		checkMenu();
+		initCheck();
+	});
+
+	function menu(){
+		$('.item4').toggleClass('item4-1');
+		$('.sub-menu').toggleClass('display-block');
+		$('.sub-menu-background').toggleClass('display-block');
+	}
+  // menuArr2에서 저장된 값들만 check가 되도록 하는 함수
+	function checkMenu() {
+		$('.sub-menu-div input[type=checkbox]').each(function(){
+			$(this).prop('checked','');
+      for(var i = 0; i<menuArr2.length; i++){
+				if($(this).val() == menuArr2[i]){
+					$(this).prop('checked', 'checked');
+				}
+			}
+		});
+	}
+  // 각 메뉴에서 X버튼에 대한 함수를 구현
+	function closeSubMenu() {
+		displayMenu();
+
+		$('.sub-menu-div input[type=checkbox]').each(function(){
+			$(this).addClass('display-none');
+		});
+		$('.all-service').removeClass('display-none');
+		$('.menu-setting').removeClass('display-none');
+		$('.ok').addClass('display-none');
+		$('.init').addClass('display-none');
+		$('.cancel').addClass('display-none');
+
+	}
+	// 메뉴설정-취소에 관한 함수
+	function initCheck(){
+		$('.sub-menu-div label').each(function(){
+      $(this).prop('for','');
+		})
+	}
+	function createCheck(){
+		var i = 0;
+		var checkbox = $('.sub-menu-div input[type=checkbox]');
+		$('.sub-menu-div label').each(function(){
+      $(this).prop('for',checkbox.eq(i++).prop('id'));
+		})
+	}
+	function displayMenu(){
+		var i =0;
+		if(menuArr2.length == 0){
+			$('.item2-1').each(function(){
+				$(this).prop('class','item2-1 back-img');
+				$(this).addClass(menuArr[i++]);
+			});
+		}else{
+			$('.item2-1').each(function(){
+			 if(menuArr2.length > i){	
+				$(this).prop('class','item2-1 back-img');
+				$(this).addClass(menuArr2[i++]);
+			 }else{
+				$(this).prop('class','item2-1 display-none');
+			 }
+			});
+		}
+
+	}
 });
