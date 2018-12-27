@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        @charset 'utf-8';
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .box,
+        .confirm {
+            border: 1px solid black;
+            outline: none;
+            width: 80px;
+            height: 80px;
+            line-height: 76px;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+            margin: 5px
+        }
+
+        .confirm {
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+
+        .top,
+        .middle,
+        .bottom, {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .bottom {
+            margin-top: 10px;
+        }
+
+        .selected {
+            background-color: blue;
+            color: white;
+        }
+
+        
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+
+            var arr = [];
+            var arrA = [];
+
+            var str3 = new String();
+            for (var i = 0; i < 3; i++) {
+                str3 += '<input type="text" class="box" value="' + (i+1) +'"readonly>';
+            }
+            var str2 = new String();
+            for (var i = 0; i < 3; i++) {
+                str2 += '<input type="text" class="box" readonly>';
+            }
+            var str = new String();
+            for (var i = 1; i <= 9; i++) {
+                str += '<input type="text" class="box" value="' + i + '" readonly>';
+            }
+
+            
+
+            $('.top').html(str);
+            $('.middle').html(str2);
+            $('.bottom').html(str3);
+            
+
+            function pick() {
+                var cnt = 0;
+                for (cnt = 0; cnt < 3; cnt++) {
+                    if (cnt < arr.length)
+                        $('.middle>input[type=text]').eq(cnt).val(arr[cnt]);
+                    else
+                        $('.middle>input[type=text]').eq(cnt).val('');
+                }
+            }
+
+
+            $('.top>input[type=text]').click(function () {
+
+                var selectedCnt = $('.selected').length;
+                var maxSize = 3;
+
+
+                if (selectedCnt < maxSize || $(this).hasClass('selected')) {
+                    if ($(this).hasClass('selected')) {
+                        arr.splice(arr.indexOf($(this).val()), 1);
+                    } else {    
+                        arr.push($(this).val());
+                    }
+
+                    pick();
+                    $(this).toggleClass('selected');
+
+                } else {
+                    alert("3개 선택 가능");
+                }
+
+            });
+
+            $('.confirm').click(function(){
+                confirm();
+                
+            });
+
+
+            var answer = [1,2,3];
+            var p1 = [];
+            arrA = answer;
+            arr = p1;
+
+
+        function confirm() {
+
+            
+            var strike = getStrike(answer, p1);
+            var ball = getBall(answer, p1);
+
+            if (strike == 0 && ball == 0) {
+                alert("없음");
+            } else if (strike == 3) {
+                alert("정답");
+            } else if (strike == 0) {
+                alert(ball + 'B');
+            } else if (ball == 0) {
+                alert(strike + 'S');
+            } else {
+                alert(strike + 'S' + ball + 'B');
+            }
+
+            console.log(strike + 'S' + ball + 'B');
+
+            function getStrike(arr1, arr2) {
+                var strike = 0;
+                for (var i = 0; i < arr1.length; i++) {
+                    if (arr1[i] == arr2[i]) {
+                        strike++;
+                    }
+                }
+                return strike;
+            }
+
+            function getBall(arr1, arr2) {
+                var ball = 0;
+                for (var i = 0; i < arr1.length; i++) {
+                    for (var j = 0; j < arr2.length; j++) {
+                        // if( i == j) continue; 다른 표현 방법
+                        // short circuit evaluation  순서에 따라 동작이 조금씩 다르게 나타내는 경우
+                        if (i != j && arr1[i] == arr2[j])
+                            ball++;
+                    }
+                }
+                return ball;
+            }
+
+        }
+
+
+        });
+    </script>
+
+    <div class="top">
+        <!-- <div id="pc"></div> -->
+    </div>
+    <br>
+    <div class="middle">
+    </div>
+    <br>
+    <div class="bottom">
+        <!-- <div id="user"></div> -->
+    </div>
+    <button class="confirm"> 확인 </button>
+
+
+
+
+</body>
+
+</html>
