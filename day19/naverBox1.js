@@ -265,7 +265,28 @@ $(document).ready(function(){
 		$('.init').addClass('display-none');
 		$('.cancel').addClass('display-none');
 
+		// subDetailMenu함수는 더보기 버튼 클릭시 오른쪽 상단에 보이는 메뉴를 
+		// 0이면 보이지 않고 1이면 다시 보여준다
+	  //	subDetailMenu(0);
+
 	}
+  /* 
+	function subDetailMenu(toggle){
+		if(toggle == 0){
+			$('.all-service').removeClass('display-none');
+			$('.menu-setting').removeClass('display-none');
+			$('.ok').addClass('display-none');
+			$('.init').addClass('display-none');
+			$('.cancel').addClass('display-none');
+		}else{
+			$('.all-service').removeClass('display-none');
+			$('.menu-setting').removeClass('display-none');
+			$('.ok').addClass('display-none');
+			$('.init').addClass('display-none');
+			$('.cancel').addClass('display-none');
+		}
+	}
+	*/
 
 	// 메뉴설정-초기화를 눌렀을 때 구현되는 함수
 	function initCheck(){

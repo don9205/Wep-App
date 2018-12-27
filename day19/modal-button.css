@@ -1,0 +1,50 @@
+@charset 'utf-8';
+
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+
+
+div>.display-block,
+.display-block{
+	display: block;
+ }
+
+ 
+.display-none{
+	display: none;
+}
+
+.bg{
+	height: 100%;
+	width: 100%;
+	z-index: 5;
+	position: absolute;
+}
+ 
+ .back{
+	 widows: 100%;
+	 height: 600px;
+	 float: left;
+	 z-index: 1;
+ }
+
+ 
+ .front{
+	 width: 200px;
+	 height: 100px;
+	 display: none;
+	 margin: 0 auto;
+	 background-color: white;
+	 border: 1px solid black;
+	 z-index: 5;
+ }
+ 
+ .background{
+	 background-color: rgba(101, 203, 243, 0.1);
+ }
+ 

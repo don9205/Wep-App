@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style>
+
+   *{
+		 box-sizing: border-box;
+
+	 }
+	 .div{
+		 width: 80px;
+		 height: 80px;
+		 border: 1px solid black;
+		 display: inline-block;
+		 font-size: 20px;
+		 line-height: 75px;
+		 text-align: center;
+	 }
+
+	 .checked{
+		 background-color: orange;
+	 }
+
+	 .box{
+		 border: 1px solid black;
+		 width: 50px;
+		 height: 50px;
+		 margin-left: 10px;
+		 display: inline-block;
+	 }
+	 .change{
+		 background-color: aqua;
+	 }
+	 .change1{
+		 background-color: white;
+	 }
+
+	</style>
+</head>
+<body>
+
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<script>
+		$(document).ready(function(){
+
+			/*
+			// 방법 1
+      $('div').click(function(){
+				// checked 클래스를 가진 객체의 갯수
+				var checkedCnt = $('.checked').length;
+				// 최대 선택 갯수
+				var maxCnt = 3;
+				// 선택된 갯수가 최대 갯수가 아니면 토글을 하고
+				if(checkedCnt < maxCnt){
+			  	$(this).toggleClass('checked');
+				}else{
+					// 클릭한 객체의 class에 checked 클래스가 없으면
+					if($(this).prop('class').indexOf('checked') == -1){
+						alert('최대 3개까지 선택할 수 있습니다');
+						$(this).removeClass('checked'); 
+					}
+				}
+			});
+			*/
+
+
+			
+			// 방법 2
+			var arr = [];
+			$('div').click(function(){
+				 var maxCnt = 3;
+				 var value = $(this).text();
+				 // 선택되어 있지 않은 박스를 선택했을 때
+				 if(arr.indexOf(value) == -1){
+					// 최대 갯수를 넘어가지 않았을 때
+					if(arr,length < maxCnt){ 
+					// 해당 값을 배열에 추가
+					arr.push(value);
+					// 	배경색을 변경
+					$(this).addClass('checked');
+					}else{
+						alert('최대 3개까지 선택할 수 있습니다');
+					}
+				 }
+				 // 선택된 박스를 다시 선택했을 때
+				 else{
+					 // 선택된 값을 배열에서 제거
+					 arr.splice(arr.indexOf(value),1);
+					 $(this).removeClass('checked');
+				 } 
+			});
+			
+			
+
+			// $('.box').click(function(){
+			
+			//	var box = $('.box').prop('background-color','aqua');
+			//	if(box){
+			//	$(this).toggleClass('change');
+			//	}else{
+			//	$(this).toggleClass('change1')	
+			//	}
+			// });
+		});
+	</script>
+</body>
+</html>

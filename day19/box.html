@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="box.css">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+	<div class="box">
+	 <span>hover 예제</span>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+			
+			$('.box').hover(function(){
+				$('span').toggleClass('display-block');
+			})
+			/* 
+			hover(함수1, 함수2) : 함수1은 들어올 때 호출, 함수2는 나갈 때 호출
+			hover(함수)         : 들어올 때와 나갈때 함수를 각각 호출
+			 */
+			// $('.box').hover(function(){
+			//  $(this).text('hover 예제');
+			// }, function(){
+			//	$(this).text('');
+			// })
+
+		})
+	</script>
+
+	
+</body>
+</html>

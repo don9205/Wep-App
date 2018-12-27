@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="modal-button.css">
+</head>
+<body>
+<div class="bg">
+ <div class="back">
+	<input type="button" class="button" value="버튼">
+ </div>
+ <div class="front">
+		확인
+	<input type="button" class="close" value="닫기">		
+ </div>
+</div>
+
+
+<script>
+	$(document).ready(function () {
+
+		$('.button').click(function () {
+
+
+			$('.front').toggleClass('display-block');
+			$('.bg').toggleClass('background');
+
+		});
+
+		$('.close').click(function(){
+
+
+			$('.front').toggleClass('display-block');
+			$('.bg').toggleClass('background');
+
+	 });
+
+	 
+	})
+</script>
+	
+</body>
+</html>
