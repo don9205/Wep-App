@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="page1.css">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
+    <script src="page1.js"></script>
+    <script src="nav.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <a class="back"><i class="fas fa-angle-left"></i></a>
+        <a class="nav-title">청남대 둘러보기 </a>
+        <div class="ham-menu font-black">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    <div class="sidebar">
+        <i class="fas fa-times sidebar-close"></i>
+    </div>
+    <div class="title swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" data-hash="silde1">Slide 1</div>
+            <div class="swiper-slide" data-hash="silde2">Slide 2</div>
+            <div class="swiper-slide" data-hash="silde3">Slide 3</div>
+            <div class="swiper-slide" data-hash="silde4">Slide 4</div>
+            <div class="swiper-slide" data-hash="silde5">Slide 5</div>
+            <div class="swiper-slide" data-hash="silde6">Slide 6</div>
+            <div class="swiper-slide" data-hash="silde7">Slide 7</div>
+            <div class="swiper-slide" data-hash="silde8">Slide 8</div>
+            <div class="swiper-slide" data-hash="silde9">Slide 9</div>
+            <div class="swiper-slide" data-hash="silde10">Slide 10</div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="contents swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide contents" data-hash="silde1">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./1.jpg" alt="Los Angeles">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./2.jpg" alt="Chicago">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./3.jpg" alt="New York">
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                </div>
+            </div>
+            <div class="swiper-slide" data-hash="silde2">2</div>
+            <div class="swiper-slide" data-hash="silde3">3</div>
+            <div class="swiper-slide" data-hash="silde4">Slide 4</div>
+            <div class="swiper-slide" data-hash="silde5">Slide 5</div>
+            <div class="swiper-slide" data-hash="silde6">Slide 6</div>
+            <div class="swiper-slide" data-hash="silde7">Slide 7</div>
+            <div class="swiper-slide" data-hash="silde8">Slide 8</div>
+            <div class="swiper-slide" data-hash="silde9">Slide 9</div>
+            <div class="swiper-slide" data-hash="silde10">Slide 10</div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
