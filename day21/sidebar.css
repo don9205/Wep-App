@@ -1,0 +1,80 @@
+@charset 'utf-8';
+
+*{
+    box-sizing: border-box;
+
+}
+
+.bar{
+    
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+    line-height: 45px;
+    text-align: center;
+    
+}
+
+.box{
+    border: 1px solid black;
+    width: 100%;
+    height: 500px;
+    display: none;
+    background-color: aquamarine;
+    opacity: 0.3;
+
+}
+
+.display-block{
+    display: block;
+}
+
+.ham-menu{
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+nav::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.sidebar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -200px;
+    width: 200px;
+    background-color: white;
+    border: 5px solid black;
+}
+
+.sidebar-close{
+    font-size: 35px;
+    float: right;
+    cursor: pointer;
+}
+
+p{
+    font-size: 40px;
+    opacity: 0;
+    animation-name: open;
+    animation-duration: 2s;
+    animation-iteration-count: none;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    height: 200px;
+    overflow: hidden scroll;
+    
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+@keyframes open{
+    from{ opacity:0;}
+    to{ opacity:1;}
+}

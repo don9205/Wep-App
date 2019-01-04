@@ -1,0 +1,104 @@
+@charset 'utf-8';
+
+body{
+    margin: 0;  
+    background-color: white;
+    overflow-x: hidden;
+}
+
+.bg{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; /* 부드럽게 */
+    animation-name: back;
+    position: absolute;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.sidebar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -200px;
+    width: 190px;
+    background-color: white;
+    border: 5px solid black;
+    z-index: 2;
+}
+
+.sidebar-close{
+    font-size: 35px;
+    float: right;
+    cursor: pointer;
+}
+
+.left-menu{
+    float: left;
+    cursor: pointer;
+    font-size: 40px;
+    color: black;
+    margin: 10px;
+}
+
+nav{
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+nav>span{
+    position: relative;
+    top: 10px;
+}
+
+
+
+.ham-menu{
+    float: right;
+    cursor: pointer;
+    font-size: 40px;
+    color: black;
+    margin: 10px;
+}
+
+nav::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.top{
+
+    height: 50px;
+    background-color: black;
+
+}
+
+.top-menu{
+    
+    margin-left: 48%;
+}
+
+.name{
+    
+    line-height: 50px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10px;
+    
+    
+}
+
+.name:hover{
+    color: yellow;
+   
+}
