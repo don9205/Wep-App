@@ -1,6 +1,11 @@
 @charset 'utf-8';
+*{
+    box-sizing: border-box;
+    padding: 0;
+}
 .box,
-#reset {
+#reset,
+#confirm{
     border: 1px solid black;
     outline: none;
     width: 80px;
@@ -9,19 +14,17 @@
     font-size: 20px;
     text-align: center;
     cursor: pointer;
-    margin: 5px
+    margin: 5px;
 }
-
-#input {
+#input{
     width: 700px;
     margin: 0 auto;
 }
-
-#boxes {
+#boxes{
     margin-top: 10px;
 }
-
-.selected {
+.selected{
+    background-color: rgb(65, 170, 255);
+    font-weight: bold;
     color: white;
-    background-color: rgb(71, 189, 163);
 }
