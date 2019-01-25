@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <input type="text" id="BData"> <br>
+        <button id="Bbtn" onclick="sendData()">입력</button>
+
+        <script>
+            function sendData() {
+            if(opener.document.getElementById('hidden').value == 'a'){    
+                opener.document.getElementById('inputA1').value = document.getElementById('BData').value;
+            }
+            else if(opener.document.getElementById('hidden').value == 'b'){
+                opener.document.getElementById('inputA2').value = document.getElementById('BData').value;
+            }
+        }
+            
+        </script>
+    
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>Document</title>
+    <style>
+    #hidden{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <input type="text" id="inputA1">
+    <button id="Btab1">B창 열기</button> <br>
+    <input type="text" id="inputA2">
+    <button id="Btab2">B창 열기</button>
+    <input type="text" id="hidden" readonly>
+    
+    <script>
+        var Btab;
+        $('#Btab1').click(function(){
+            Btab = window.open('B.html','B','width=500, height=500');
+            $('#hidden').val('a')
+        });
+
+        $('#Btab2').click(function(){
+            Btab = window.open('B.html','B','width=500, height=500');
+            $('#hidden').val('b')
+        });
+    </script>
+</body>
+</html>
