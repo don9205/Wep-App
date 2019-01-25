@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <select id="op">
+    <option value="N1한국">한국</option>
+    <option value="N2일본">일본</option>
+    <option value="N3중국">중국</option>
+    </select>
+    <button id="Ok" onclick="Ok()">확인</button>
+
+    <script>
+        var op = window.document.getElementById('op');
+    function Ok() {
+        
+        if(op.value == 'N1한국'){
+            opener.document.getElementById('Na').value = document.getElementById('op').value;         
+        }else if(op.value == 'N2일본'){
+            opener.document.getElementById('Na').value = document.getElementById('op').value;
+        }else if(op.value == 'N3중국'){
+            opener.document.getElementById('Na').value = document.getElementById('op').value;
+        }
+    }
+    </script>
+    
+</body>
+</html>

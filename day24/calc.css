@@ -1,0 +1,86 @@
+@charset 'utf-8';
+.div-box{
+    box-sizing: border-box;
+    width: 320px;
+    height: 100px;
+    border: 1px solid black;
+    text-align: right;
+}
+
+
+
+.div-input{
+    box-sizing: border-box;
+    width: 320px;
+    height: 100px;
+    border: 1px solid black;
+    text-align: right;
+}
+
+#dataStr{
+    font-size: 18px;
+    margin-top: 10px;
+
+
+}
+
+input{
+    width: 315px;
+    border: none;
+    outline: none;
+    text-align: right;
+}
+
+
+
+#dataNum{
+    font-size: 35px;
+    text-align: right;
+
+}
+    
+
+
+input{
+    text-align: right;
+    border: none;
+    width: 318px;
+    font-size: 35px;
+}
+
+/*
+
+.up{
+    height: 40px;
+    font-size: 20px;
+}
+
+.down{
+    height: 60px;
+    
+}
+
+*/
+
+.div-row{
+    display: flex;
+}
+.div-btn{
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    font-size: 35px;
+    line-height: 78px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.div-btn:hover{
+    background-color: gainsboro;
+
+}
+
+.div-btn:active{
+    background-color: gray;
+}
