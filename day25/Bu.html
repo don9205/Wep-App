@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>Document</title>
+    <style>
+            .input{
+                display: block;
+            }
+    </style>
+</head>
+<body>
+
+        <div class="box">
+        <input type="text" class="input">
+        </div>
+        <button id="plus">추가</button>
+
+        <script>
+            $(document).ready(function(){
+                var str = '<input type="text" class="input" value="추가">';
+                $('#plus').click(function(){
+                    // div 태그에 이용해도 되지만 div태그가 여러개일 경우 원하지 않는 동작이 될 수 있다.
+                    // $('.box').append('<input type="text" class="input" value="추가">');
+                    // $(this).parent().find('.box').append('<input type="text" class="input" value="추가">');
+                    $('.input').last().after(str);
+                    // $('.input').focus(); 같은 결과를 나타내지만 input 클래스의 객체 모두 한번씩 focus()를 실행하고
+                    // 최종적으로 마지막에 있는 객체가 focus()가 된다.
+                    $('.input').last().focus();
+                    // 마지막 객체만 focus()를 한다.
+
+                }); 
+            });
+        </script>
+</body>
+</html>
